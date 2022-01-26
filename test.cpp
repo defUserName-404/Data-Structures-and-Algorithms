@@ -3,17 +3,16 @@
 int main()
 {
     Solution *solution;
-    const string s1 = "Hhaha",
-                 s2 = "hi",
-                 s3 = "JYUIa",
-                 s4 = "124dj*",
-                 s5 = "1n&N21";
+    const string s1 = "hello world",
+                 s2 = "e hlolldwro",
+                 s3 = "C++ is the best",
+                 s4 = "c++ Is the best",
+                 s5 = "insomnia",
+                 s6 = "mniaison";
 
-    cout << solution->isUnique(s1) << endl;
-    cout << solution->isUnique(s2) << endl;
-    cout << solution->isUnique(s3) << endl;
-    cout << solution->isUnique(s4) << endl;
-    cout << solution->isUnique(s5) << endl;
+    cout << solution->isPermutation(s1, s2) << endl;
+    cout << solution->isPermutation(s3, s4) << endl;
+    cout << solution->isPermutation(s5, s6) << endl;
 
     return 0;
 }
