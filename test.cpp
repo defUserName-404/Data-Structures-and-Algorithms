@@ -1,18 +1,19 @@
-#include "Famous-Coding-Interview-Problems/MaxSumOfKElements.hpp"
-#include <iostream>
+#include "CrackingTheCodingInterview/ArraysAndStrings.hpp"
 
 int main()
 {
-    std::vector<int> num1, num2, num3, num4;
-    num1 = {100, 200, 300, 400};
-    num2 = {1, 4, 2, 10, 23, 3, 1, 0, 20};
-    num3 = {2, 3};
-    num4 = {1, 4, 2, 10, 2, 3, 1, 0, 20};
+    Solution *solution;
+    const string s1 = "Hhaha",
+                 s2 = "hi",
+                 s3 = "JYUIa",
+                 s4 = "124dj*",
+                 s5 = "1n&N21";
 
-    std::cout << max_sum_of_k_elements(num1, 2) << std::endl;
-    std::cout << max_sum_of_k_elements(num2, 4) << std::endl;
-    std::cout << max_sum_of_k_elements(num3, 3) << std::endl;
-    std::cout << max_sum_of_k_elements(num4, 4) << std::endl;
+    cout << solution->isUnique(s1) << endl;
+    cout << solution->isUnique(s2) << endl;
+    cout << solution->isUnique(s3) << endl;
+    cout << solution->isUnique(s4) << endl;
+    cout << solution->isUnique(s5) << endl;
 
     return 0;
 }
