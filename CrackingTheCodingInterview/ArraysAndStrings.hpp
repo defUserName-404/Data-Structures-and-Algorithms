@@ -11,6 +11,8 @@ class Solution
     bool isPermutation(const string &s1, const string &s2);
     //! Problem 3: Replace all the spaces in the string with "%20"
     void urlify(string &_string);
+    //! Problem 4: Determine if a given string is a permutation of a palindrome or not
+    bool isPermutationOfPalindrome(const string &_string);
 };
 
 /*
@@ -92,4 +94,30 @@ void Solution::urlify(string &_string)
             idx--;
         }
     }
+}
+
+/*
+? We will count the number of characters of the string
+? If the string is a permutation of a palindrome, it can have one odd character maximum
+*/
+bool Solution::isPermutationOfPalindrome(const string &_string)
+{
+    int characterCount[256] = {0};
+    bool oddCharacterFound = false;
+
+    for (const char &ch : _string)
+        characterCount[ch]++;
+
+    for (int i = 0; i < 256; i++)
+    {
+        if (characterCount[i] % 2)
+        {
+            if (oddCharacterFound)
+                return false;
+            else
+                oddCharacterFound = true;
+        }
+    }
+
+    return true;
 }
