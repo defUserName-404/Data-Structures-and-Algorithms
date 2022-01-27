@@ -9,6 +9,8 @@ class Solution
     bool isUnique(const string &_string);
     //! Problem 2: Determine if a string is a permutation of another string or not
     bool isPermutation(const string &s1, const string &s2);
+    //! Problem 3: Replace all the spaces in the string with "%20"
+    void urlify(string &_string);
 };
 
 /*
@@ -56,4 +58,38 @@ bool Solution::isPermutation(const string &s1, const string &s2)
     }
 
     return true;
+}
+
+/*
+? We will count the number of characters in the string
+? The size of the url will be (current size + (number of spaces * 2))
+? We will overrite every space in the string with "%20"
+*/
+void Solution::urlify(string &_string)
+{
+    int countSpaces = 0;
+
+    for (const char &ch : _string)
+        if (ch == ' ')
+            countSpaces++;
+
+    int actualLength = _string.size();
+    int idx = actualLength + countSpaces * 2;
+    _string.resize(idx);
+
+    for (int i = actualLength - 1; i >= 0; i--)
+    {
+        if (_string[i] == ' ')
+        {
+            _string[idx - 1] = '0';
+            _string[idx - 2] = '2';
+            _string[idx - 3] = '%';
+            idx -= 3;
+        }
+        else
+        {
+            _string[idx - 1] = _string[i];
+            idx--;
+        }
+    }
 }
