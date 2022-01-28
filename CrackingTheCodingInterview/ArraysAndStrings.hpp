@@ -13,6 +13,9 @@ class Solution
     void urlify(string &_string);
     //! Problem 4: Determine if a given string is a permutation of a palindrome or not
     bool isPermutationOfPalindrome(const string &_string);
+    //! Problem 5: Three types of edits are possible for a string: insert, remove or replace a character
+    //!  		   Determine if a string can equal to another string in at most one edit
+    bool isOneEditAway(const string &s1, const string &s2);
 };
 
 /*
@@ -116,6 +119,39 @@ bool Solution::isPermutationOfPalindrome(const string &_string)
                 return false;
             else
                 oddCharacterFound = true;
+        }
+    }
+
+    return true;
+}
+
+/*
+? We will count the characters of both string
+? Strings are one edit away if the character counts are identical except for one
+*/
+bool Solution::isOneEditAway(const string &s1, const string &s2)
+{
+    int len1 = s1.size(), len2 = s2.size();
+
+    if (abs(len1 - len2) > 1)
+        return false;
+
+    int characterCount1[256] = {0}, characterCount2[256] = {0};
+    bool foundDiff = false;
+
+    for (const char &ch : s1)
+        characterCount1[ch]++;
+    for (const char &ch : s2)
+        characterCount2[ch]++;
+
+    for (int i = 0; i < 256; i++)
+    {
+        if (characterCount1[i] != characterCount2[i])
+        {
+            if (len1 != len2 and !foundDiff)
+                foundDiff = true;
+            else
+                return false;
         }
     }
 
