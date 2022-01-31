@@ -16,6 +16,10 @@ class Solution
     //! Problem 5: Three types of edits are possible for a string: insert, remove or replace a character
     //!  		   Determine if a string can equal to another string in at most one edit
     bool isOneEditAway(const string &s1, const string &s2);
+    //! Problem 6: Implement a method to perform a basic string compression using the counts of repeated characters
+    //!  		   For example: aabcccccaaa would become a2b1c5a3. Return the original string if the length of compressed string doesn't shrink.
+    //!            String only consists of uppercase and lowercase English letters
+    string compressedString(string &str);
 };
 
 /*
@@ -156,4 +160,29 @@ bool Solution::isOneEditAway(const string &s1, const string &s2)
     }
 
     return true;
+}
+
+/*
+? We will count the consecutive characters in the string
+? If the next character is not the same as the previous, we will update the resulting string with the character and how many times it's repeated consecutively
+? If the final resulting string length is bigger than that of the original string, return resulting string or the original one otherwise
+*/
+string Solution::compressedString(string &str)
+{
+    string compressed = "";
+    int countConsecutive = 0, n = str.size();
+
+    for (int i = 0; i < n; i++)
+    {
+        countConsecutive++;
+
+        if (i + 1 == n or str[i] != str[i + 1])
+        {
+            compressed += str[i];
+            compressed += to_string(countConsecutive);
+            countConsecutive = 0;
+        }
+    }
+
+    return ((compressed.size() >= n) ? str : compressed);
 }

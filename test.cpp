@@ -3,15 +3,17 @@
 int main()
 {
     Solution *solution;
-    string s1 = "hello world",
-           s2 = "kkauiaa",
+    string s1 = "helloworld",
+           s2 = "kkkkkkaauiaaa",
            s3 = "baba",
-           s4 = "RacecaR";
+           s4 = "RacecaR",
+		   s5 = "aabcccccaaa";
 
-    cout << solution->isPermutationOfPalindrome(s1) << endl;
-    cout << solution->isPermutationOfPalindrome(s2) << endl;
-    cout << solution->isPermutationOfPalindrome(s3) << endl;
-    cout << solution->isPermutationOfPalindrome(s4) << endl;
+    cout << solution->compressedString(s1) << endl;
+    cout << solution->compressedString(s2) << endl;
+    cout << solution->compressedString(s3) << endl;
+    cout << solution->compressedString(s4) << endl;
+    cout << solution->compressedString(s5) << endl;
 
     return 0;
 }
