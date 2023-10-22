@@ -6,7 +6,7 @@
 
 # @lc code=start
 INF = 10 ** 7
-class Solution:
+class solution:
     def coinChange(self, C: List[int], S: int) -> int:
         noCoins = len(C)
         dp = [[INF for _ in range(noCoins+1)] for _ in range(S+1)]
