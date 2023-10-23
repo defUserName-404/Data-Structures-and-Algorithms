@@ -5,7 +5,7 @@ def countMultiples(x, a, b):
     lcm = a * b // math.gcd(a, b)
     return x//a + x//b - x//lcm # x/2 + x/3 - x/6
 
-class Solution:
+class solution:
     def nthMagicalNumber(self, n: int, a: int, b: int) -> int:
         # a = 2, b = 3 in our case
         lo, hi = 1, min(a, b) * n # hi = 2*n remember?
