@@ -9,6 +9,8 @@
 **.class
 **/out/
 
+**/.idea
+
 # Precompiled Headers
 *.gch
 *.pch
