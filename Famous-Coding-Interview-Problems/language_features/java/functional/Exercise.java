@@ -1,5 +1,6 @@
 package language_features.java.functional;
 
+import javax.swing.*;
 import java.util.List;
 
 public class Exercise {
@@ -35,4 +36,17 @@ public class Exercise {
 			   .forEach(System.out::println);
 	}
 
+	/**
+	 * This method prints the only name of the courses that contains at least 4 letters in its name.
+	 *
+	 * @param courses The list of the name of courses from which strings containing at least 4 letters will be filtered and printed.
+	 */
+	public void printCoursesWhoseNameHasAtleastFourLetters(List<String> courses) {
+		courses.stream()
+			   .filter(course -> course.chars()
+									   .filter(Character::isLetter)
+									   .count() >= 4)
+			   .forEach(System.out::println);
+	}
+	
 }
