@@ -24,4 +24,15 @@ public class Exercise {
 		courses.forEach(System.out::println);
 	}
 
+	/**
+	 * This method prints the only name of the courses that contains the string "Spring".
+	 *
+	 * @param courses The list of the name of courses from which strings containing "Spring" will be filtered and printed.
+	 */
+	public void printCoursesContainingTheWordSpring(List<String> courses) {
+		courses.stream()
+			   .filter(course -> course.contains("Spring"))
+			   .forEach(System.out::println);
+	}
+
 }
