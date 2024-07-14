@@ -246,4 +246,85 @@ public class ExerciseTest {
 		);
 	}
 
+	@Test
+	public void testPrintCubesOfOddNumbersWithEmptyList() {
+		List<Integer> numbers = List.of();
+		new Exercise().printCubesOfOddNumbers(numbers);
+		String actualOutput = outputStreamCaptor.toString()
+												.trim();
+		assertEquals("", actualOutput, "No output should be printed when the list is empty");
+	}
+
+	@Test
+	public void testPrintCubesOfOddNumbersWithAllEvenNumbers() {
+		List<Integer> numbers = List.of(2, 4, 6);
+		new Exercise().printCubesOfOddNumbers(numbers);
+		String actualOutput = outputStreamCaptor.toString()
+												.trim();
+		assertEquals("", actualOutput, "No output should be printed if all numbers are even");
+	}
+
+	@Test
+	public void testPrintCubesOfOddNumbersWithSingleOddNumber() {
+		List<Integer> numbers = List.of(1, 2, 4);
+		new Exercise().printCubesOfOddNumbers(numbers);
+		String actualOutput = outputStreamCaptor.toString()
+												.trim();
+		assertEquals("1", actualOutput, "Only the cube of the odd number should be printed");
+	}
+
+	@Test
+	public void testPrintCubesOfOddNumbersWithMultipleOddNumbers() {
+		List<Integer> numbers = List.of(5, 2, 7, 4);
+		new Exercise().printCubesOfOddNumbers(numbers);
+		String actualOutput = outputStreamCaptor.toString()
+												.trim();
+		assertEquals("125\n343", actualOutput, "Cubes of all odd numbers should be printed");
+	}
+
+	@Test
+	public void testPrintCubesOfOddNumbersWithNullList() {
+		List<Integer> numbers = null;
+		assertThrows(NullPointerException.class, () -> new Exercise().printCubesOfOddNumbers(numbers),
+					 "Null pointer exception should be thrown when the list is null"
+		);
+	}
+
+	@Test
+	public void testPrintNumberOfCharactersWithEmptyList() {
+		List<String> courses = List.of();
+		new Exercise().printNumberOfCharactersInEachCourseName(courses);
+		String actualOutput = outputStreamCaptor.toString()
+												.trim();
+		assertEquals("", actualOutput, "No output should be printed when the list is empty");
+	}
+
+	@Test
+	public void testPrintNumberOfCharactersWithSingleCourse() {
+		List<String> courses = List.of("Java");
+		new Exercise().printNumberOfCharactersInEachCourseName(courses);
+		String actualOutput = outputStreamCaptor.toString()
+												.trim();
+		assertEquals("4", actualOutput, "Length of the single course name should be printed");
+	}
+
+	@Test
+	public void testPrintNumberOfCharactersWithMultipleCourses() {
+		List<String> courses = Arrays.asList("Python", "Spring Framework", "C++");
+		new Exercise().printNumberOfCharactersInEachCourseName(courses);
+		String actualOutput = outputStreamCaptor.toString()
+												.trim();
+		assertEquals("6\n16\n3", actualOutput, "Length of each course name should be printed on a new line");
+	}
+
+	@Test
+	public void testPrintNumberOfCharactersWithNullList() {
+		List<String> courses = null;
+		assertThrows(
+				NullPointerException.class,
+				() -> new Exercise().printNumberOfCharactersInEachCourseName(courses),
+				"Null pointer exception should be thrown when the list is null"
+		);
+	}
+
 }

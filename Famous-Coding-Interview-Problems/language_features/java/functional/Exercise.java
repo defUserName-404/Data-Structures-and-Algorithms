@@ -48,5 +48,28 @@ public class Exercise {
 									   .count() >= 4)
 			   .forEach(System.out::println);
 	}
-	
+
+	/**
+	 * This method calculates and prints the cubes of the odd numbers from the given list of integers.
+	 *
+	 * @param numbers The list of integers from which odd numbers will be filtered and their cubes will be calculated and printed.
+	 */
+	public void printCubesOfOddNumbers(List<Integer> numbers) {
+		numbers.stream()
+			   .filter(number -> number % 2 != 0)
+			   .map(number -> (int) Math.pow(number, 3))
+			   .forEach(System.out::println);
+	}
+
+	/**
+	 * This method prints the number of characters in each course name from the given list of course names.
+	 *
+	 * @param courses The list of course names from which the number of characters in each name will be calculated and printed.
+	 */
+	public void printNumberOfCharactersInEachCourseName(List<String> courses) {
+		courses.stream()
+			   .map(String::length)
+			   .forEach(System.out::println);
+	}
+
 }
