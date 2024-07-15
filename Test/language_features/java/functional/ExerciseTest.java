@@ -32,19 +32,18 @@ public class ExerciseTest {
 		new Exercise().printOddNumbers(emptyList);
 		String actualOutput = outputStreamCaptor.toString()
 												.trim();
-		assertTrue(actualOutput
-						   .isEmpty(), "No output should be printed when the input list is empty");
+		assertTrue(actualOutput.isEmpty(), "No output should be printed when the input list is empty");
 	}
 
 	@Test
 	public void testPrintOddNumbersWithOddNumbersList() {
 		List<Integer> oddNumbersList = Arrays.asList(1, 3, 5, 7);
 		new Exercise().printOddNumbers(oddNumbersList);
-		String expectedOutput = "1\n3\n5\n7";
 		String actualOutput = outputStreamCaptor.toString()
 												.trim();
-		assertEquals(expectedOutput, actualOutput,
-					 "Should print only odd numbers when the input list contains only odd numbers"
+		assertEquals(
+				"1\n3\n5\n7", actualOutput,
+				"Should print only odd numbers when the input list contains only odd numbers"
 		);
 	}
 
@@ -52,11 +51,11 @@ public class ExerciseTest {
 	public void testPrintOddNumbersWithMixedNumbersList() {
 		List<Integer> mixedNumbersList = Arrays.asList(1, 2, 3, 4, 5, 6);
 		new Exercise().printOddNumbers(mixedNumbersList);
-		String expectedOutput = "1\n3\n5";
 		String actualOutput = outputStreamCaptor.toString()
 												.trim();
-		assertEquals(expectedOutput, actualOutput,
-					 "Should print only odd numbers when the input list contains both odd and even numbers"
+		assertEquals(
+				"1\n3\n5", actualOutput,
+				"Should print only odd numbers when the input list contains both odd and even numbers"
 		);
 	}
 
@@ -64,11 +63,11 @@ public class ExerciseTest {
 	public void testPrintOddNumbersWithSingleOddNumberList() {
 		List<Integer> singleOddNumberList = List.of(1);
 		new Exercise().printOddNumbers(singleOddNumberList);
-		String expectedOutput = "1";
 		String actualOutput = outputStreamCaptor.toString()
 												.trim();
-		assertEquals(expectedOutput, actualOutput,
-					 "Should print only the first odd number when the input list contains only one odd number"
+		assertEquals(
+				"1", actualOutput,
+				"Should print only the first odd number when the input list contains only one odd number"
 		);
 	}
 
@@ -78,8 +77,7 @@ public class ExerciseTest {
 		new Exercise().printOddNumbers(evenNumbersList);
 		String actualOutput = outputStreamCaptor.toString()
 												.trim();
-		assertTrue(actualOutput
-						   .isEmpty(), "Should print no numbers when the input list contains only even numbers");
+		assertTrue(actualOutput.isEmpty(), "Should print no numbers when the input list contains only even numbers");
 	}
 
 	@Test
@@ -88,19 +86,18 @@ public class ExerciseTest {
 		new Exercise().printOddNumbers(zeroList);
 		String actualOutput = outputStreamCaptor.toString()
 												.trim();
-		assertTrue(actualOutput
-						   .isEmpty(), "No output should be printed when the input list contains only zero");
+		assertTrue(actualOutput.isEmpty(), "No output should be printed when the input list contains only zero");
 	}
 
 	@Test
 	public void testPrintOddNumbersWithMultipleOddNumbersList() {
 		List<Integer> oddNumbersList = Arrays.asList(1, 3, 5, 7);
 		new Exercise().printOddNumbers(oddNumbersList);
-		String expectedOutput = "1\n3\n5\n7";
 		String actualOutput = outputStreamCaptor.toString()
 												.trim();
-		assertEquals(expectedOutput, actualOutput,
-					 "Should print all odd numbers when the input list contains multiple odd numbers"
+		assertEquals(
+				"1\n3\n5\n7", actualOutput,
+				"Should print all odd numbers when the input list contains multiple odd numbers"
 		);
 	}
 
@@ -108,11 +105,11 @@ public class ExerciseTest {
 	public void testPrintOddNumbersWithNegativeOddNumberList() {
 		List<Integer> negativeOddNumbersList = Arrays.asList(-1, -3, -5);
 		new Exercise().printOddNumbers(negativeOddNumbersList);
-		String expectedOutput = "-1\n-3\n-5";
 		String actualOutput = outputStreamCaptor.toString()
 												.trim();
-		assertEquals(expectedOutput, actualOutput,
-					 "Should print no numbers when the input list contains a negative odd number"
+		assertEquals(
+				"-1\n-3\n-5", actualOutput,
+				"Should print no numbers when the input list contains a negative odd number"
 		);
 	}
 
@@ -131,8 +128,7 @@ public class ExerciseTest {
 		new Exercise().printCourses(courses);
 		String actualOutput = outputStreamCaptor.toString()
 												.trim();
-		String expectedOutput = "Java";
-		assertEquals(expectedOutput, actualOutput, "Only one item should be printed when the list has only one item");
+		assertEquals("Java", actualOutput, "Only one item should be printed when the list has only one item");
 	}
 
 	@Test
@@ -141,16 +137,14 @@ public class ExerciseTest {
 		new Exercise().printCourses(courses);
 		String actualOutput = outputStreamCaptor.toString()
 												.trim();
-		String expectedOutput = "Java\nPython\nC++";
-		assertEquals(expectedOutput, actualOutput, "All the items in the list should be printed");
+		assertEquals("Java\nPython\nC++", actualOutput, "All the items in the list should be printed");
 	}
 
 	@Test
 	public void testPrintCoursesWithNullList() {
 		List<String> courses = null;
-		assertThrows(
-				NullPointerException.class, () -> new Exercise().printCourses(courses),
-				"Null pointer exception should be thrown when the list is null"
+		assertThrows(NullPointerException.class, () -> new Exercise().printCourses(courses),
+					 "Null pointer exception should be thrown when the list is null"
 		);
 	}
 
@@ -320,10 +314,87 @@ public class ExerciseTest {
 	@Test
 	public void testPrintNumberOfCharactersWithNullList() {
 		List<String> courses = null;
-		assertThrows(
-				NullPointerException.class,
-				() -> new Exercise().printNumberOfCharactersInEachCourseName(courses),
-				"Null pointer exception should be thrown when the list is null"
+		assertThrows(NullPointerException.class, () -> new Exercise().printNumberOfCharactersInEachCourseName(courses),
+					 "Null pointer exception should be thrown when the list is null"
+		);
+	}
+
+	@Test
+	public void testSumOfSquaresWithEmptyList() {
+		List<Integer> numbers = List.of();
+		int actualSum = new Exercise().sumOfSquaresOfNumbers(numbers);
+		assertEquals(0, actualSum, "Sum should be 0 for an empty list");
+	}
+
+	@Test
+	public void testSumOfSquaresWithSingleNumber() {
+		List<Integer> numbers = List.of(5);
+		int actualSum = new Exercise().sumOfSquaresOfNumbers(numbers);
+		assertEquals(25, actualSum, "Sum should be the square of the single number");
+	}
+
+	@Test
+	public void testSumOfSquaresWithMultipleNumbers() {
+		List<Integer> numbers = List.of(2, 3, 4);
+		int actualSum = new Exercise().sumOfSquaresOfNumbers(numbers);
+		assertEquals(29, actualSum, "Sum should be the sum of squares of all numbers");
+	}
+
+	@Test
+	public void testSumOfSquaresWithNegativeNumbers() {
+		List<Integer> numbers = List.of(-2, 1, 0);
+		int actualSum = new Exercise().sumOfSquaresOfNumbers(numbers);
+		assertEquals(5, actualSum, "Sum should be the sum of squares including negative numbers");
+	}
+
+	@Test
+	public void testSumOfSquaresWithNullList() {
+		List<Integer> numbers = null;
+		assertThrows(NullPointerException.class, () -> new Exercise().sumOfSquaresOfNumbers(numbers),
+					 "Null pointer exception should be thrown when the list is null"
+		);
+	}
+
+	@Test
+	public void testSumOfOddNumbersWithEmptyList() {
+		List<Integer> numbers = List.of();
+		int actualSum = new Exercise().sumOfOddNumbers(numbers);
+		assertEquals(0, actualSum, "Sum should be 0 for an empty list");
+	}
+
+	@Test
+	public void testSumOfOddNumbersWithAllEvenNumbers() {
+		List<Integer> numbers = List.of(2, 4, 6);
+		int actualSum = new Exercise().sumOfOddNumbers(numbers);
+		assertEquals(0, actualSum, "Sum should be 0 if all numbers are even");
+	}
+
+	@Test
+	public void testSumOfOddNumbersWithSingleOddNumber() {
+		List<Integer> numbers = List.of(1, 2, 3);
+		int actualSum = new Exercise().sumOfOddNumbers(numbers);
+		assertEquals(4, actualSum, "Sum should be the single odd number");
+	}
+
+	@Test
+	public void testSumOfOddNumbersWithMultipleOddNumbers() {
+		List<Integer> numbers = List.of(5, 2, 7, 4);
+		int actualSum = new Exercise().sumOfOddNumbers(numbers);
+		assertEquals(12, actualSum, "Sum should be the sum of all odd numbers");
+	}
+
+	@Test
+	public void testSumOfOddNumbersWithNegativeOddNumbers() {
+		List<Integer> numbers = List.of(-3, 1, 0, -5);
+		int actualSum = new Exercise().sumOfOddNumbers(numbers);
+		assertEquals(-7, actualSum, "Sum should include negative odd numbers");
+	}
+
+	@Test
+	public void testSumOfOddNumbersWithNullList() {
+		List<Integer> numbers = null;
+		assertThrows(NullPointerException.class, () -> new Exercise().sumOfOddNumbers(numbers),
+					 "Null pointer exception should be thrown when the list is null"
 		);
 	}
 

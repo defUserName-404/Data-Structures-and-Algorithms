@@ -1,6 +1,5 @@
 package language_features.java.functional;
 
-import javax.swing.*;
 import java.util.List;
 
 public class Exercise {
@@ -70,6 +69,30 @@ public class Exercise {
 		courses.stream()
 			   .map(String::length)
 			   .forEach(System.out::println);
+	}
+
+	/**
+	 * This method calculates and returns the sum of the squares of all the integers in the given list of integers.
+	 *
+	 * @param numbers The list of integers from which the squares of each integer will be calculated and summed up.
+	 * @return The sum of the squares of all the integers in the given list of integers.
+	 */
+	public int sumOfSquaresOfNumbers(List<Integer> numbers) {
+		return numbers.stream()
+					  .mapToInt(number -> number * number)
+					  .sum();
+	}
+
+	/**
+	 * This method calculates and returns the sum of the odd numbers in the given list of integers.
+	 *
+	 * @param numbers The list of integers from which the odd numbers will be filtered and their sum will be calculated.
+	 * @return The sum of the odd numbers in the given list of integers.
+	 */
+	public int sumOfOddNumbers(List<Integer> numbers) {
+		return numbers.stream()
+					  .filter(number -> number % 2 != 0)
+					  .reduce(0, Integer::sum);
 	}
 
 }
