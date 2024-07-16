@@ -398,4 +398,34 @@ public class ExerciseTest {
 		);
 	}
 
+	@Test
+	public void testListOfEvenNumbersWithEmptyList() {
+		List<Integer> numbers = List.of();
+		List<Integer> actualEvenNumbers = new Exercise().listOfEvenNumbers(numbers);
+		assertEquals(List.of(), actualEvenNumbers, "Empty list should result in an empty list");
+	}
+
+	@Test
+	public void testListOfEvenNumbersWithAllEvenNumbers() {
+		List<Integer> numbers = List.of(2, 4, 6);
+		List<Integer> actualEvenNumbers = new Exercise().listOfEvenNumbers(numbers);
+		assertEquals(numbers, actualEvenNumbers, "All even numbers should be returned");
+	}
+
+	@Test
+	public void testListOfEvenNumbersWithMixedNumbers() {
+		List<Integer> numbers = List.of(1, 2, 3, 4);
+		List<Integer> expectedEvenNumbers = List.of(2, 4);
+		List<Integer> actualEvenNumbers = new Exercise().listOfEvenNumbers(numbers);
+		assertEquals(expectedEvenNumbers, actualEvenNumbers, "Only even numbers should be returned");
+	}
+
+	@Test
+	public void testListOfEvenNumbersWithNullList() {
+		List<Integer> numbers = null;
+		assertThrows(NullPointerException.class, () -> new Exercise().listOfEvenNumbers(numbers),
+					 "Null pointer exception should be thrown when the list is null"
+		);
+	}
+
 }

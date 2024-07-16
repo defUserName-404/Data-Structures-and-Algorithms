@@ -1,6 +1,7 @@
 package language_features.java.functional;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class Exercise {
 
@@ -93,6 +94,12 @@ public class Exercise {
 		return numbers.stream()
 					  .filter(number -> number % 2 != 0)
 					  .reduce(0, Integer::sum);
+	}
+
+	public List<Integer> listOfEvenNumbers(List<Integer> numbers) {
+		return numbers.stream()
+					  .filter(number -> number % 2 == 0)
+					  .collect(Collectors.toList());
 	}
 
 }
