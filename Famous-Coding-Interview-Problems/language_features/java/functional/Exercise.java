@@ -96,6 +96,12 @@ public class Exercise {
 					  .reduce(0, Integer::sum);
 	}
 
+	/**
+	 * This method filters the even numbers from the given list of integers and returns a new list containing only the even numbers.
+	 *
+	 * @param numbers The list of integers from which even numbers will be filtered and returned.
+	 * @return A new list containing only the even numbers from the given list of integers.
+	 */
 	public List<Integer> listOfEvenNumbers(List<Integer> numbers) {
 		return numbers.stream()
 					  .filter(number -> number % 2 == 0)
