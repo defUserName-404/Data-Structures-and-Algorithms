@@ -10,6 +10,7 @@
 **/out/
 
 **/.idea
+**/**.iml
 
 # Precompiled Headers
 *.gch
