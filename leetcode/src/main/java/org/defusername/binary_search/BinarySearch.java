@@ -1,5 +1,8 @@
 package org.defusername.binary_search;
 
+/*
+Solution to the problem 704 on LeetCode
+ */
 public class BinarySearch {
 
 	public int search(int[] nums, int target) {
