@@ -117,3 +117,41 @@ them, incrementing one of the pointers when relevant. This is the approach to me
 2. [Two Sum](https://leetcode.com/problems/two-sum/)
 3. [Sort Colors](https://leetcode.com/problems/sort-colors/)
 4. [Palindromic Substrings](https://leetcode.com/problems/palindromic-substrings/)
+
+### Traversing from the Right
+
+Sometimes you need to traverse from the right to the left.
+
+#### Common Questions Examples
+
+1. [Daily Temperatures](https://leetcode.com/problems/daily-temperatures/)
+2. [Number of Visible People in a Queue](https://leetcode.com/problems/number-of-visible-people-in-a-queue/)
+
+### Sorting the Array
+
+Is the array sorted? or partially sorted? If it is, some form of binary search can be used. This also usually means the
+interviewer is looking for a solution better than `O(n)`.
+
+Can you sort the arrray? Sometimes sorting the array first may significally simplify the problem. Obviously this would
+not work if the order of array elements need to be preserved.
+
+#### Common Questions Examples
+
+1. [Merge Intervals](https://leetcode.com/problems/merge-intervals/)
+2. [Non-overlapping Intervals](https://leetcode.com/problems/non-overlapping-intervals/)
+
+### Index as a Hash Key
+
+If you are given a sequence and the interviewer asks for `O(1)` space, it might be possible to use the array itself as a
+hash table. For example, if the array only has values from 1 to N, where N is the length of the array, negate the value
+at the index corresponding to the value.
+
+#### Common Questions Examples
+
+1. [First Missing Positive](https://leetcode.com/problems/first-missing-positive/)
+2. [Daily Temperatures](https://leetcode.com/problems/daily-temperatures/)
+
+### Traversing the Array More than Once
+
+Traversing the array twice/thrice (as long as fewer than n times) is still `O(n)`. Sometimes
+traversing the array more than once can help you solve the problem while keeping the time complexity to `O(n)`.
