@@ -3,17 +3,25 @@
 Arrays hold values of the same type at contiguous memory locations.
 
 <!-- TOC -->
-
 * [Array](#array)
-    * [Advantages](#advantages)
-    * [Disadvantages](#disadvantages)
-    * [Common Terms](#common-terms)
-    * [Time Complexity](#time-complexity)
-    * [Things to look out for during interview](#things-to-look-out-for-during-interview)
-    * [Corner cases](#corner-cases)
-    * [Techniques](#techniques)
-        * [Sliding Window](#sliding-window)
-
+  * [Advantages](#advantages)
+  * [Disadvantages](#disadvantages)
+  * [Common Terms](#common-terms)
+  * [Time Complexity](#time-complexity)
+  * [Things to look out for during interview](#things-to-look-out-for-during-interview)
+  * [Corner cases](#corner-cases)
+  * [Techniques](#techniques)
+    * [Sliding Window](#sliding-window)
+      * [Common Questions Examples](#common-questions-examples)
+    * [Two Pointers](#two-pointers)
+      * [Common Questions Examples](#common-questions-examples-1)
+    * [Traversing from the Right](#traversing-from-the-right)
+      * [Common Questions Examples](#common-questions-examples-2)
+    * [Sorting the Array](#sorting-the-array)
+      * [Common Questions Examples](#common-questions-examples-3)
+    * [Index as a Hash Key](#index-as-a-hash-key)
+      * [Common Questions Examples](#common-questions-examples-4)
+    * [Traversing the Array More than Once](#traversing-the-array-more-than-once)
 <!-- TOC -->
 
 ## Advantages
