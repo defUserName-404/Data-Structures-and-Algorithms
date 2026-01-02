@@ -8,7 +8,7 @@ package two_sum.brute_force;
  * in the array and check if their sum equals the target value.
  *
  */
-class Solution {
+public class Solution {
     /**
      * Finds two numbers in the given array that add up to the target value.
      *
