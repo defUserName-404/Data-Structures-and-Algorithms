@@ -1,0 +1,16 @@
+package maximum_subarray.kadane_algorithm;
+
+class Solution {
+    public int maxSubArray(int[] nums) {
+        int globalMax = nums[0];
+        int currentMax = nums[0];
+
+        for (int i = 1; i < nums.length; i++) {
+            var num = nums[i];
+            currentMax = Math.max(num, currentMax + num);
+            globalMax = Math.max(globalMax, currentMax);
+        }
+
+        return globalMax;
+    }
+}
